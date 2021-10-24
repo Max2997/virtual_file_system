@@ -1,0 +1,124 @@
+body {
+  background-color: $darkgrey;
+  color: $text;
+  font-family: "Fira Mono", Monospace;
+  margin: 0;
+  overflow-x: hidden;
+  a {
+    color: inherit;
+    &:hover {
+      color: $highlighttext;
+      background-color: $highlight;
+    }
+  }
+  .stream {
+    margin-top: 8px;
+  }
+  .line {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    margin: 0 4px;
+    padding-top: 2px;
+    width: calc(100% - 12px);
+    p {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    .name {
+      max-width: 80px;
+      min-width: 80px;
+      text-align: right;
+      padding-right: 6px;
+    }
+    .current-working {
+      text-align: center;
+      padding-right: 10px;
+      padding-left: 10px;
+      max-width: 180px;
+    }
+  }
+  .editline {
+    background-color: $black;
+    padding: 2px 4px 0px 4px;
+    width: calc(100%);
+    .edit {
+      min-width: calc(100% - 400px);
+      outline: none;
+      background: $black;
+      border: 0;
+      color: white;
+    }
+    margin: 0;
+    margin-bottom: 8px;
+    .time {
+      user-select: none;
+      cursor: default;
+    }
+  }
+}
+.whitet {
+  color: $highlighttext;
+}
+.redt {
+  color: $red;
+}
+.important {
+  color: $textred;
+}
+.bluet {
+  color: $blue;
+}
+.greent {
+  color: $green;
+}
+.selft {
+  color: $selftext;
+}
+::selection {
+  color: $highlighttext;
+  background: $highlight;
+}
+::-webkit-scrollbar {
+  background-color: $darkgrey;
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $grey;
+}
+::-webkit-scrollbar-corner {
+  background-color: $darkgrey;
+}
+::-webkit-resizer {
+  background-color: $darkgrey;
+}
+
+.phjspenheader:hover {
+  background-color: #d44c2a;
+}
+
+
+.spinner::after {
+  content: '';
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  border-radius: 50%;
+}
+
+.spinner.smooth::after {
+  border-top: 4px solid rgba(255, 255, 255, 1.0);
+  border-left: 4px solid rgba(255, 255, 255, 1.0);
+  border-right: 4px solid rgba(255, 255, 255, 0.0);
+  animation: spinner .6s linear infinite;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
